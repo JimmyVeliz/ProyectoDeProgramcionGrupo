@@ -352,8 +352,9 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
-
+a345.txt
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
