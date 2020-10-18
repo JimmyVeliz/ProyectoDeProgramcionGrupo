@@ -88,6 +88,7 @@
             ejecutar.CommandText = sql
             ejecutar.ExecuteNonQuery()
             cerrarConexion()
+
             MsgBox("Registro eliminado con exito")
             listaPacientes()
         End If
