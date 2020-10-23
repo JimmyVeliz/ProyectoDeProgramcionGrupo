@@ -22,8 +22,16 @@ Partial Class FrmPaciente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TcPacientes = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.RbDPI = New System.Windows.Forms.RadioButton()
+        Me.RbNombre = New System.Windows.Forms.RadioButton()
+        Me.RbApellido = New System.Windows.Forms.RadioButton()
+        Me.ChbBuscar = New System.Windows.Forms.CheckBox()
+        Me.LbBuscar = New System.Windows.Forms.Label()
+        Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.dgvPacientes = New System.Windows.Forms.DataGridView()
@@ -41,6 +49,8 @@ Partial Class FrmPaciente
         Me.idTipoSangre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtCerrarForm = New System.Windows.Forms.PictureBox()
+        Me.TtInformacion = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.TcPacientes.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +70,14 @@ Partial Class FrmPaciente
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnAgregar)
+        Me.TabPage1.Controls.Add(Me.BtnBuscar)
+        Me.TabPage1.Controls.Add(Me.RbDPI)
+        Me.TabPage1.Controls.Add(Me.RbNombre)
+        Me.TabPage1.Controls.Add(Me.RbApellido)
+        Me.TabPage1.Controls.Add(Me.ChbBuscar)
+        Me.TabPage1.Controls.Add(Me.LbBuscar)
+        Me.TabPage1.Controls.Add(Me.TxtBuscar)
         Me.TabPage1.Controls.Add(Me.btnEliminar)
         Me.TabPage1.Controls.Add(Me.btnEditar)
         Me.TabPage1.Controls.Add(Me.dgvPacientes)
@@ -70,6 +88,87 @@ Partial Class FrmPaciente
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "MIs pacientes"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Location = New System.Drawing.Point(779, 19)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 9
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        Me.BtnBuscar.Visible = False
+        '
+        'RbDPI
+        '
+        Me.RbDPI.AutoSize = True
+        Me.RbDPI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbDPI.Location = New System.Drawing.Point(917, 202)
+        Me.RbDPI.Name = "RbDPI"
+        Me.RbDPI.Size = New System.Drawing.Size(48, 20)
+        Me.RbDPI.TabIndex = 8
+        Me.RbDPI.TabStop = True
+        Me.RbDPI.Text = "DPI"
+        Me.RbDPI.UseVisualStyleBackColor = True
+        Me.RbDPI.Visible = False
+        '
+        'RbNombre
+        '
+        Me.RbNombre.AutoSize = True
+        Me.RbNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbNombre.Location = New System.Drawing.Point(916, 179)
+        Me.RbNombre.Name = "RbNombre"
+        Me.RbNombre.Size = New System.Drawing.Size(75, 20)
+        Me.RbNombre.TabIndex = 7
+        Me.RbNombre.TabStop = True
+        Me.RbNombre.Text = "Nombre"
+        Me.RbNombre.UseVisualStyleBackColor = True
+        Me.RbNombre.Visible = False
+        '
+        'RbApellido
+        '
+        Me.RbApellido.AutoSize = True
+        Me.RbApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbApellido.Location = New System.Drawing.Point(916, 156)
+        Me.RbApellido.Name = "RbApellido"
+        Me.RbApellido.Size = New System.Drawing.Size(76, 20)
+        Me.RbApellido.TabIndex = 6
+        Me.RbApellido.TabStop = True
+        Me.RbApellido.Text = "Apellido"
+        Me.RbApellido.UseVisualStyleBackColor = True
+        Me.RbApellido.Visible = False
+        '
+        'ChbBuscar
+        '
+        Me.ChbBuscar.AutoSize = True
+        Me.ChbBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChbBuscar.Location = New System.Drawing.Point(917, 127)
+        Me.ChbBuscar.Name = "ChbBuscar"
+        Me.ChbBuscar.Size = New System.Drawing.Size(74, 22)
+        Me.ChbBuscar.TabIndex = 5
+        Me.ChbBuscar.Text = "Buscar"
+        Me.ChbBuscar.UseVisualStyleBackColor = True
+        '
+        'LbBuscar
+        '
+        Me.LbBuscar.AutoSize = True
+        Me.LbBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbBuscar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.LbBuscar.Location = New System.Drawing.Point(8, 19)
+        Me.LbBuscar.Name = "LbBuscar"
+        Me.LbBuscar.Size = New System.Drawing.Size(66, 18)
+        Me.LbBuscar.TabIndex = 4
+        Me.LbBuscar.Text = "Buscar:"
+        Me.LbBuscar.Visible = False
+        '
+        'TxtBuscar
+        '
+        Me.TxtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuscar.Location = New System.Drawing.Point(78, 19)
+        Me.TxtBuscar.Name = "TxtBuscar"
+        Me.TxtBuscar.Size = New System.Drawing.Size(669, 24)
+        Me.TxtBuscar.TabIndex = 3
+        Me.TxtBuscar.Visible = False
         '
         'btnEliminar
         '
@@ -98,7 +197,7 @@ Partial Class FrmPaciente
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPacientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPaciente, Me.dpi, Me.apellido, Me.nombre, Me.direccion, Me.telefono, Me.TipoSangre, Me.estatura, Me.peso, Me.fechaNac, Me.edad, Me.idTipoSangre})
-        Me.dgvPacientes.Location = New System.Drawing.Point(8, 3)
+        Me.dgvPacientes.Location = New System.Drawing.Point(3, 57)
         Me.dgvPacientes.Name = "dgvPacientes"
         Me.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPacientes.Size = New System.Drawing.Size(907, 511)
@@ -188,6 +287,22 @@ Partial Class FrmPaciente
         Me.BtCerrarForm.TabIndex = 6
         Me.BtCerrarForm.TabStop = False
         '
+        'TtInformacion
+        '
+        Me.TtInformacion.AutomaticDelay = 100
+        Me.TtInformacion.IsBalloon = True
+        Me.TtInformacion.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'BtnAgregar
+        '
+        Me.BtnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnAgregar.Location = New System.Drawing.Point(917, 6)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnAgregar.TabIndex = 10
+        Me.BtnAgregar.Text = "Agregar"
+        Me.BtnAgregar.UseVisualStyleBackColor = True
+        '
         'FrmPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -201,6 +316,7 @@ Partial Class FrmPaciente
         Me.Text = "Form1"
         Me.TcPacientes.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -227,4 +343,13 @@ Partial Class FrmPaciente
     Friend WithEvents fechaNac As DataGridViewTextBoxColumn
     Friend WithEvents edad As DataGridViewTextBoxColumn
     Friend WithEvents idTipoSangre As DataGridViewTextBoxColumn
+    Friend WithEvents LbBuscar As Label
+    Friend WithEvents TxtBuscar As TextBox
+    Friend WithEvents RbDPI As RadioButton
+    Friend WithEvents RbNombre As RadioButton
+    Friend WithEvents RbApellido As RadioButton
+    Friend WithEvents ChbBuscar As CheckBox
+    Friend WithEvents TtInformacion As ToolTip
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents BtnAgregar As Button
 End Class

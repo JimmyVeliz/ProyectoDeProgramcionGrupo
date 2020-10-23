@@ -19,36 +19,57 @@
         End While
         respuesta.Close()
         cerrarConexion()
-
     End Sub
 
-    'Private Sub BtConsulta_Click(sender As Object, e As EventArgs)
-    '    Dim sql As String = "SELECT * FROM paciente WHERE ID_Paciente LIKE " & Val(txtIdPaciente.Text)
-    '    Dim ejecutar As New OleDb.OleDbCommand
-    '    Dim respuesta As OleDb.OleDbDataReader
+    Public Sub buscarApellido()
+        Dim sql As String = "SELECT Paciente.id_tipo_sangre AS idTipoSangre, * FROM Paciente INNER JOIN Tipo_sangre ON Paciente.id_tipo_sangre = Tipo_sangre.id_tipo_sangre WHERE apellido like '%" & TxtBuscar.Text & "%'"
+        Dim ejecutar As New OleDb.OleDbCommand
+        Dim respuesta As OleDb.OleDbDataReader
+        abrirConexion()
+        ejecutar.CommandType = CommandType.Text
+        ejecutar.Connection = conexion
+        ejecutar.CommandText = sql
+        respuesta = ejecutar.ExecuteReader
+        dgvPacientes.Rows.Clear()
+        While (respuesta.Read)
+            dgvPacientes.Rows.Add(respuesta!id_paciente, respuesta!DPI, respuesta!apellido, respuesta!nombre, respuesta!Direccion, respuesta!telefono, respuesta!Tipo_sangre, respuesta!Estatura, respuesta!peso, respuesta!Fecha_Nacimiento, respuesta!Edad, respuesta!id_tipo_sangre)
+        End While
+        respuesta.Close()
+        cerrarConexion()
+    End Sub
 
-    '    abrirConexion()
-    '    ejecutar.CommandType = CommandType.Text
-    '    ejecutar.Connection = conexion
-    '    ejecutar.CommandText = sql
-    '    'MsgBox(sql)
-    '    respuesta = ejecutar.ExecuteReader
-    '    While respuesta.Read
-    '        If respuesta.HasRows Then
-    '            LbApellido.Text = respuesta!apellido
-    '            TxtCUI.Text = respuesta!DPI
-    '            LbDireccion.Text = respuesta!Direccion
-    '            LbNombre.Text = respuesta!Nombre
-    '            LbSangre.Text = respuesta!id_tipo_sangre
-    '        Else
-    '            MsgBox("Paciente no existe")
-    '        End If
-    '    End While
-    '    respuesta.Close()
-    '    cerrarConexion()
-
-    'End Sub
-
+    Public Sub busarNombre()
+        Dim sql As String = "SELECT Paciente.id_tipo_sangre AS idTipoSangre, * FROM Paciente INNER JOIN Tipo_sangre ON Paciente.id_tipo_sangre = Tipo_sangre.id_tipo_sangre WHERE nombre like '%" & TxtBuscar.Text & "%'"
+        Dim ejecutar As New OleDb.OleDbCommand
+        Dim respuesta As OleDb.OleDbDataReader
+        abrirConexion()
+        ejecutar.CommandType = CommandType.Text
+        ejecutar.Connection = conexion
+        ejecutar.CommandText = sql
+        respuesta = ejecutar.ExecuteReader
+        dgvPacientes.Rows.Clear()
+        While (respuesta.Read)
+            dgvPacientes.Rows.Add(respuesta!id_paciente, respuesta!DPI, respuesta!apellido, respuesta!nombre, respuesta!Direccion, respuesta!telefono, respuesta!Tipo_sangre, respuesta!Estatura, respuesta!peso, respuesta!Fecha_Nacimiento, respuesta!Edad, respuesta!id_tipo_sangre)
+        End While
+        respuesta.Close()
+        cerrarConexion()
+    End Sub
+    Public Sub buscarDpi()
+        Dim sql As String = "SELECT Paciente.id_tipo_sangre AS idTipoSangre, * FROM Paciente INNER JOIN Tipo_sangre ON Paciente.id_tipo_sangre = Tipo_sangre.id_tipo_sangre WHERE DPI like '%" & TxtBuscar.Text & "%'"
+        Dim ejecutar As New OleDb.OleDbCommand
+        Dim respuesta As OleDb.OleDbDataReader
+        abrirConexion()
+        ejecutar.CommandType = CommandType.Text
+        ejecutar.Connection = conexion
+        ejecutar.CommandText = sql
+        respuesta = ejecutar.ExecuteReader
+        dgvPacientes.Rows.Clear()
+        While (respuesta.Read)
+            dgvPacientes.Rows.Add(respuesta!id_paciente, respuesta!DPI, respuesta!apellido, respuesta!nombre, respuesta!Direccion, respuesta!telefono, respuesta!Tipo_sangre, respuesta!Estatura, respuesta!peso, respuesta!Fecha_Nacimiento, respuesta!Edad, respuesta!id_tipo_sangre)
+        End While
+        respuesta.Close()
+        cerrarConexion()
+    End Sub
     Private Sub FrmPaciente_Load(sender As Object, e As EventArgs) Handles Me.Load
         listaPacientes()
     End Sub
@@ -92,5 +113,94 @@
             MsgBox("Registro eliminado con exito")
             listaPacientes()
         End If
+    End Sub
+#Region "En esta area se programo todo en relacion con la busqueda de datos"
+    Private Sub RbApellido_CheckedChanged(sender As Object, e As EventArgs) Handles RbApellido.CheckedChanged
+        'buscar datos por apellido
+        If RbApellido.Checked = True Then
+            'En esta linea de codigo cambiamos el color de fuente el radio boton utilizando codigo RGB si es selecionando para buscar
+            RbApellido.ForeColor = Color.FromArgb(50, 190, 239)
+            'En esta linea de codigo colocamos en negrita el radio boton seleccionado para bucar
+            RbApellido.Font = New Font(RbApellido.Font, FontStyle.Bold)
+            'En las siguientes dos linea de codigo colocamos los otros radio boton sin negrita para no ser confundido con el que temenos seleccionado
+            RbNombre.Font = New Font(RbNombre.Font, FontStyle.Regular)
+            RbDPI.Font = New Font(RbDPI.Font, FontStyle.Regular)
+
+            'En las proximas cuatro lineas de codigo es donde desactivamos la seleccion de los otros radio boton y regresarlos a color negro 
+            RbNombre.Checked = False
+            RbNombre.ForeColor = Color.Black
+            RbDPI.Checked = False
+            RbDPI.ForeColor = Color.Black
+            'Activamos el boton de buscar para que la busqueda sea automatica al momento de seleccionar el radio boton
+            BtnBuscar_Click(True, Nothing)
+        End If
+    End Sub
+    Private Sub RbNombre_CheckedChanged(sender As Object, e As EventArgs) Handles RbNombre.CheckedChanged
+        'buscar datos por nombre
+        If RbNombre.Checked = True Then
+            RbNombre.ForeColor = Color.FromArgb(50, 190, 239)
+            RbNombre.Font = New Font(RbNombre.Font, FontStyle.Bold)
+            RbApellido.Font = New Font(RbApellido.Font, FontStyle.Regular)
+            RbDPI.Font = New Font(RbDPI.Font, FontStyle.Regular)
+
+            RbApellido.Checked = False
+            RbApellido.ForeColor = Color.Black
+            RbDPI.Checked = False
+            RbDPI.ForeColor = Color.Black
+            BtnBuscar_Click(True, Nothing)
+        End If
+    End Sub
+    Private Sub RbDPI_CheckedChanged(sender As Object, e As EventArgs) Handles RbDPI.CheckedChanged
+        'buscar datos por DPI
+        If RbDPI.Checked = True Then
+            RbDPI.ForeColor = Color.FromArgb(50, 190, 239)
+            RbDPI.Font = New Font(RbDPI.Font, FontStyle.Bold)
+            RbApellido.Font = New Font(RbApellido.Font, FontStyle.Regular)
+            RbNombre.Font = New Font(RbNombre.Font, FontStyle.Regular)
+
+            RbApellido.Checked = False
+            RbApellido.ForeColor = Color.Black
+            RbNombre.Checked = False
+            RbNombre.ForeColor = Color.Black
+            BtnBuscar_Click(True, Nothing)
+        End If
+    End Sub
+    Private Sub ChbBuscar_CheckedChanged(sender As Object, e As EventArgs) Handles ChbBuscar.CheckedChanged
+        If ChbBuscar.Checked = True Then
+            ChbBuscar.ForeColor = Color.FromArgb(184, 62, 31)
+            RbApellido.Checked = True
+            RbApellido.Visible = True
+            RbNombre.Visible = True
+            RbDPI.Visible = True
+            TxtBuscar.Visible = True
+            LbBuscar.Visible = True
+        Else
+            ChbBuscar.ForeColor = Color.Black
+            RbApellido.Visible = False
+            RbNombre.Visible = False
+            RbDPI.Visible = False
+            TxtBuscar.Visible = False
+            LbBuscar.Visible = False
+            TxtBuscar.Clear()
+            listaPacientes()
+        End If
+    End Sub
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+        BtnBuscar_Click(True, Nothing)
+    End Sub
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        If RbApellido.Checked = True Then
+            buscarApellido()
+        ElseIf RbNombre.Checked = True Then
+            busarNombre()
+        ElseIf RbDPI.Checked = True Then
+            buscarDpi()
+        End If
+    End Sub
+#End Region
+    Private Sub TxtBuscar_MouseHover(sender As Object, e As EventArgs) Handles TxtBuscar.MouseHover
+        TtInformacion.SetToolTip(TxtBuscar, "Ingrese informacion a buscar")
+        TtInformacion.ToolTipTitle = "Buscar datos"
+        TtInformacion.ToolTipIcon = ToolTipIcon.Info
     End Sub
 End Class

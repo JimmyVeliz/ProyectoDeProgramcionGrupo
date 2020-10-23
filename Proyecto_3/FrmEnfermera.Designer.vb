@@ -25,6 +25,33 @@ Partial Class FrmEnfermera
         Me.BtCerrarForm = New System.Windows.Forms.PictureBox()
         Me.TcEnfermera = New System.Windows.Forms.TabControl()
         Me.TpConEnfe = New System.Windows.Forms.TabPage()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.cmbIdEspec = New System.Windows.Forms.ComboBox()
+        Me.cmbEspecialidad = New System.Windows.Forms.ComboBox()
+        Me.lbIdUsuario = New System.Windows.Forms.Label()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtPeso = New System.Windows.Forms.TextBox()
+        Me.txtEstatura = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.cmbIdTipoUsu = New System.Windows.Forms.ComboBox()
+        Me.cmbTipoUsu = New System.Windows.Forms.ComboBox()
+        Me.cmbIdTipoSangre = New System.Windows.Forms.ComboBox()
+        Me.cmbTipoSangre = New System.Windows.Forms.ComboBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.dtFechaNac = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.BtConEnfe = New System.Windows.Forms.Button()
         Me.txtDpi = New System.Windows.Forms.TextBox()
         Me.LbClinEnfe = New System.Windows.Forms.Label()
@@ -49,33 +76,7 @@ Partial Class FrmEnfermera
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.dtFechaNac = New System.Windows.Forms.DateTimePicker()
-        Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.cmbTipoSangre = New System.Windows.Forms.ComboBox()
-        Me.cmbIdTipoSangre = New System.Windows.Forms.ComboBox()
-        Me.cmbIdTipoUsu = New System.Windows.Forms.ComboBox()
-        Me.cmbTipoUsu = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.txtPeso = New System.Windows.Forms.TextBox()
-        Me.txtEstatura = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.TxtPassword = New System.Windows.Forms.TextBox()
-        Me.txtCorreo = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.lbIdUsuario = New System.Windows.Forms.Label()
-        Me.cmbIdEspec = New System.Windows.Forms.ComboBox()
-        Me.cmbEspecialidad = New System.Windows.Forms.ComboBox()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.MTxtEstatura = New System.Windows.Forms.MaskedTextBox()
         CType(Me.BtCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TcEnfermera.SuspendLayout()
         Me.TpConEnfe.SuspendLayout()
@@ -109,6 +110,7 @@ Partial Class FrmEnfermera
         '
         'TpConEnfe
         '
+        Me.TpConEnfe.Controls.Add(Me.MTxtEstatura)
         Me.TpConEnfe.Controls.Add(Me.Label21)
         Me.TpConEnfe.Controls.Add(Me.cmbIdEspec)
         Me.TpConEnfe.Controls.Add(Me.cmbEspecialidad)
@@ -154,6 +156,247 @@ Partial Class FrmEnfermera
         Me.TpConEnfe.TabIndex = 0
         Me.TpConEnfe.Text = "Consulta"
         Me.TpConEnfe.UseVisualStyleBackColor = True
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(421, 63)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(124, 23)
+        Me.Label21.TabIndex = 41
+        Me.Label21.Text = "Especialidad"
+        '
+        'cmbIdEspec
+        '
+        Me.cmbIdEspec.FormattingEnabled = True
+        Me.cmbIdEspec.Location = New System.Drawing.Point(578, 6)
+        Me.cmbIdEspec.Name = "cmbIdEspec"
+        Me.cmbIdEspec.Size = New System.Drawing.Size(121, 21)
+        Me.cmbIdEspec.TabIndex = 40
+        Me.cmbIdEspec.Visible = False
+        '
+        'cmbEspecialidad
+        '
+        Me.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbEspecialidad.Enabled = False
+        Me.cmbEspecialidad.FormattingEnabled = True
+        Me.cmbEspecialidad.Location = New System.Drawing.Point(578, 63)
+        Me.cmbEspecialidad.Name = "cmbEspecialidad"
+        Me.cmbEspecialidad.Size = New System.Drawing.Size(121, 21)
+        Me.cmbEspecialidad.TabIndex = 39
+        '
+        'lbIdUsuario
+        '
+        Me.lbIdUsuario.AutoSize = True
+        Me.lbIdUsuario.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbIdUsuario.Location = New System.Drawing.Point(221, 27)
+        Me.lbIdUsuario.Name = "lbIdUsuario"
+        Me.lbIdUsuario.Size = New System.Drawing.Size(101, 23)
+        Me.lbIdUsuario.TabIndex = 38
+        Me.lbIdUsuario.Text = "ID Usuario"
+        '
+        'TxtPassword
+        '
+        Me.TxtPassword.Location = New System.Drawing.Point(221, 463)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.Size = New System.Drawing.Size(347, 20)
+        Me.TxtPassword.TabIndex = 37
+        '
+        'txtCorreo
+        '
+        Me.txtCorreo.Location = New System.Drawing.Point(221, 426)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(347, 20)
+        Me.txtCorreo.TabIndex = 36
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(8, 460)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(112, 23)
+        Me.Label19.TabIndex = 34
+        Me.Label19.Text = "Contraseña"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(8, 422)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(70, 23)
+        Me.Label20.TabIndex = 35
+        Me.Label20.Text = "Correo"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(328, 383)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(35, 19)
+        Me.Label17.TabIndex = 32
+        Me.Label17.Text = "Lbs."
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(328, 345)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(31, 19)
+        Me.Label18.TabIndex = 33
+        Me.Label18.Text = "Cm."
+        '
+        'txtPeso
+        '
+        Me.txtPeso.Enabled = False
+        Me.txtPeso.Location = New System.Drawing.Point(221, 382)
+        Me.txtPeso.Name = "txtPeso"
+        Me.txtPeso.Size = New System.Drawing.Size(101, 20)
+        Me.txtPeso.TabIndex = 31
+        '
+        'txtEstatura
+        '
+        Me.txtEstatura.Enabled = False
+        Me.txtEstatura.Location = New System.Drawing.Point(221, 345)
+        Me.txtEstatura.Name = "txtEstatura"
+        Me.txtEstatura.Size = New System.Drawing.Size(101, 20)
+        Me.txtEstatura.TabIndex = 30
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(8, 379)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(54, 23)
+        Me.Label15.TabIndex = 28
+        Me.Label15.Text = "Peso"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(8, 341)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(86, 23)
+        Me.Label16.TabIndex = 29
+        Me.Label16.Text = "Estatura"
+        '
+        'cmbIdTipoUsu
+        '
+        Me.cmbIdTipoUsu.FormattingEnabled = True
+        Me.cmbIdTipoUsu.Location = New System.Drawing.Point(221, 6)
+        Me.cmbIdTipoUsu.Name = "cmbIdTipoUsu"
+        Me.cmbIdTipoUsu.Size = New System.Drawing.Size(121, 21)
+        Me.cmbIdTipoUsu.TabIndex = 27
+        Me.cmbIdTipoUsu.Visible = False
+        '
+        'cmbTipoUsu
+        '
+        Me.cmbTipoUsu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoUsu.FormattingEnabled = True
+        Me.cmbTipoUsu.Location = New System.Drawing.Point(221, 63)
+        Me.cmbTipoUsu.Name = "cmbTipoUsu"
+        Me.cmbTipoUsu.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTipoUsu.TabIndex = 26
+        '
+        'cmbIdTipoSangre
+        '
+        Me.cmbIdTipoSangre.FormattingEnabled = True
+        Me.cmbIdTipoSangre.Location = New System.Drawing.Point(407, 308)
+        Me.cmbIdTipoSangre.Name = "cmbIdTipoSangre"
+        Me.cmbIdTipoSangre.Size = New System.Drawing.Size(121, 21)
+        Me.cmbIdTipoSangre.TabIndex = 25
+        Me.cmbIdTipoSangre.Visible = False
+        '
+        'cmbTipoSangre
+        '
+        Me.cmbTipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoSangre.FormattingEnabled = True
+        Me.cmbTipoSangre.Location = New System.Drawing.Point(221, 308)
+        Me.cmbTipoSangre.Name = "cmbTipoSangre"
+        Me.cmbTipoSangre.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTipoSangre.TabIndex = 24
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(221, 270)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(347, 20)
+        Me.txtTelefono.TabIndex = 23
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Location = New System.Drawing.Point(221, 207)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(347, 20)
+        Me.txtDireccion.TabIndex = 22
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(221, 170)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(347, 20)
+        Me.txtNombre.TabIndex = 21
+        '
+        'txtApellido
+        '
+        Me.txtApellido.Location = New System.Drawing.Point(221, 134)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(347, 20)
+        Me.txtApellido.TabIndex = 20
+        '
+        'dtFechaNac
+        '
+        Me.dtFechaNac.CustomFormat = "dd/mm/yyyy"
+        Me.dtFechaNac.Location = New System.Drawing.Point(221, 240)
+        Me.dtFechaNac.Name = "dtFechaNac"
+        Me.dtFechaNac.Size = New System.Drawing.Size(209, 20)
+        Me.dtFechaNac.TabIndex = 19
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(8, 308)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(142, 23)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Tipo de sangre"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(8, 270)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(87, 23)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "Telefono"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(8, 63)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(147, 23)
+        Me.Label13.TabIndex = 17
+        Me.Label13.Text = "Tipo de usuario"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(8, 27)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(101, 23)
+        Me.Label14.TabIndex = 18
+        Me.Label14.Text = "ID Usuario"
         '
         'BtConEnfe
         '
@@ -274,7 +517,7 @@ Partial Class FrmEnfermera
         Me.TpActDoc.Location = New System.Drawing.Point(4, 22)
         Me.TpActDoc.Name = "TpActDoc"
         Me.TpActDoc.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpActDoc.Size = New System.Drawing.Size(958, 358)
+        Me.TpActDoc.Size = New System.Drawing.Size(958, 504)
         Me.TpActDoc.TabIndex = 1
         Me.TpActDoc.Text = "Actualizar"
         Me.TpActDoc.UseVisualStyleBackColor = True
@@ -383,246 +626,13 @@ Partial Class FrmEnfermera
         Me.Panel1.Size = New System.Drawing.Size(36, 530)
         Me.Panel1.TabIndex = 9
         '
-        'Label3
+        'MTxtEstatura
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(8, 308)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(142, 23)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Tipo de sangre"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(8, 270)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(87, 23)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Telefono"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(8, 63)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(147, 23)
-        Me.Label13.TabIndex = 17
-        Me.Label13.Text = "Tipo de usuario"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(8, 27)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(101, 23)
-        Me.Label14.TabIndex = 18
-        Me.Label14.Text = "ID Usuario"
-        '
-        'dtFechaNac
-        '
-        Me.dtFechaNac.CustomFormat = "dd/mm/yyyy"
-        Me.dtFechaNac.Location = New System.Drawing.Point(221, 240)
-        Me.dtFechaNac.Name = "dtFechaNac"
-        Me.dtFechaNac.Size = New System.Drawing.Size(209, 20)
-        Me.dtFechaNac.TabIndex = 19
-        '
-        'txtApellido
-        '
-        Me.txtApellido.Location = New System.Drawing.Point(221, 134)
-        Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(347, 20)
-        Me.txtApellido.TabIndex = 20
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(221, 170)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(347, 20)
-        Me.txtNombre.TabIndex = 21
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.Location = New System.Drawing.Point(221, 207)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(347, 20)
-        Me.txtDireccion.TabIndex = 22
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.Location = New System.Drawing.Point(221, 270)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(347, 20)
-        Me.txtTelefono.TabIndex = 23
-        '
-        'cmbTipoSangre
-        '
-        Me.cmbTipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTipoSangre.FormattingEnabled = True
-        Me.cmbTipoSangre.Location = New System.Drawing.Point(221, 308)
-        Me.cmbTipoSangre.Name = "cmbTipoSangre"
-        Me.cmbTipoSangre.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTipoSangre.TabIndex = 24
-        '
-        'cmbIdTipoSangre
-        '
-        Me.cmbIdTipoSangre.FormattingEnabled = True
-        Me.cmbIdTipoSangre.Location = New System.Drawing.Point(407, 308)
-        Me.cmbIdTipoSangre.Name = "cmbIdTipoSangre"
-        Me.cmbIdTipoSangre.Size = New System.Drawing.Size(121, 21)
-        Me.cmbIdTipoSangre.TabIndex = 25
-        Me.cmbIdTipoSangre.Visible = False
-        '
-        'cmbIdTipoUsu
-        '
-        Me.cmbIdTipoUsu.FormattingEnabled = True
-        Me.cmbIdTipoUsu.Location = New System.Drawing.Point(221, 6)
-        Me.cmbIdTipoUsu.Name = "cmbIdTipoUsu"
-        Me.cmbIdTipoUsu.Size = New System.Drawing.Size(121, 21)
-        Me.cmbIdTipoUsu.TabIndex = 27
-        Me.cmbIdTipoUsu.Visible = False
-        '
-        'cmbTipoUsu
-        '
-        Me.cmbTipoUsu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTipoUsu.FormattingEnabled = True
-        Me.cmbTipoUsu.Location = New System.Drawing.Point(221, 63)
-        Me.cmbTipoUsu.Name = "cmbTipoUsu"
-        Me.cmbTipoUsu.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTipoUsu.TabIndex = 26
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(8, 379)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(54, 23)
-        Me.Label15.TabIndex = 28
-        Me.Label15.Text = "Peso"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(8, 341)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(86, 23)
-        Me.Label16.TabIndex = 29
-        Me.Label16.Text = "Estatura"
-        '
-        'txtPeso
-        '
-        Me.txtPeso.Enabled = False
-        Me.txtPeso.Location = New System.Drawing.Point(221, 382)
-        Me.txtPeso.Name = "txtPeso"
-        Me.txtPeso.Size = New System.Drawing.Size(101, 20)
-        Me.txtPeso.TabIndex = 31
-        '
-        'txtEstatura
-        '
-        Me.txtEstatura.Enabled = False
-        Me.txtEstatura.Location = New System.Drawing.Point(221, 345)
-        Me.txtEstatura.Name = "txtEstatura"
-        Me.txtEstatura.Size = New System.Drawing.Size(101, 20)
-        Me.txtEstatura.TabIndex = 30
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(328, 383)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(35, 19)
-        Me.Label17.TabIndex = 32
-        Me.Label17.Text = "Lbs."
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(328, 345)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(31, 19)
-        Me.Label18.TabIndex = 33
-        Me.Label18.Text = "Cm."
-        '
-        'TxtPassword
-        '
-        Me.TxtPassword.Location = New System.Drawing.Point(221, 463)
-        Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.Size = New System.Drawing.Size(347, 20)
-        Me.TxtPassword.TabIndex = 37
-        '
-        'txtCorreo
-        '
-        Me.txtCorreo.Location = New System.Drawing.Point(221, 426)
-        Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(347, 20)
-        Me.txtCorreo.TabIndex = 36
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(8, 460)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(112, 23)
-        Me.Label19.TabIndex = 34
-        Me.Label19.Text = "Contraseña"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(8, 422)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(70, 23)
-        Me.Label20.TabIndex = 35
-        Me.Label20.Text = "Correo"
-        '
-        'lbIdUsuario
-        '
-        Me.lbIdUsuario.AutoSize = True
-        Me.lbIdUsuario.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbIdUsuario.Location = New System.Drawing.Point(221, 27)
-        Me.lbIdUsuario.Name = "lbIdUsuario"
-        Me.lbIdUsuario.Size = New System.Drawing.Size(101, 23)
-        Me.lbIdUsuario.TabIndex = 38
-        Me.lbIdUsuario.Text = "ID Usuario"
-        '
-        'cmbIdEspec
-        '
-        Me.cmbIdEspec.FormattingEnabled = True
-        Me.cmbIdEspec.Location = New System.Drawing.Point(578, 6)
-        Me.cmbIdEspec.Name = "cmbIdEspec"
-        Me.cmbIdEspec.Size = New System.Drawing.Size(121, 21)
-        Me.cmbIdEspec.TabIndex = 40
-        Me.cmbIdEspec.Visible = False
-        '
-        'cmbEspecialidad
-        '
-        Me.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbEspecialidad.Enabled = False
-        Me.cmbEspecialidad.FormattingEnabled = True
-        Me.cmbEspecialidad.Location = New System.Drawing.Point(578, 63)
-        Me.cmbEspecialidad.Name = "cmbEspecialidad"
-        Me.cmbEspecialidad.Size = New System.Drawing.Size(121, 21)
-        Me.cmbEspecialidad.TabIndex = 39
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(421, 63)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(124, 23)
-        Me.Label21.TabIndex = 41
-        Me.Label21.Text = "Especialidad"
+        Me.MTxtEstatura.Location = New System.Drawing.Point(407, 345)
+        Me.MTxtEstatura.Mask = "000"
+        Me.MTxtEstatura.Name = "MTxtEstatura"
+        Me.MTxtEstatura.Size = New System.Drawing.Size(56, 20)
+        Me.MTxtEstatura.TabIndex = 42
         '
         'FrmEnfermera
         '
@@ -698,4 +708,5 @@ Partial Class FrmEnfermera
     Friend WithEvents Label21 As Label
     Friend WithEvents cmbIdEspec As ComboBox
     Friend WithEvents cmbEspecialidad As ComboBox
+    Friend WithEvents MTxtEstatura As MaskedTextBox
 End Class
