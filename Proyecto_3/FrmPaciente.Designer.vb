@@ -25,6 +25,7 @@ Partial Class FrmPaciente
         Me.components = New System.ComponentModel.Container()
         Me.TcPacientes = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.RbDPI = New System.Windows.Forms.RadioButton()
         Me.RbNombre = New System.Windows.Forms.RadioButton()
@@ -50,7 +51,6 @@ Partial Class FrmPaciente
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtCerrarForm = New System.Windows.Forms.PictureBox()
         Me.TtInformacion = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.TcPacientes.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +89,16 @@ Partial Class FrmPaciente
         Me.TabPage1.Text = "MIs pacientes"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'BtnAgregar
+        '
+        Me.BtnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnAgregar.Location = New System.Drawing.Point(917, 6)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnAgregar.TabIndex = 10
+        Me.BtnAgregar.Text = "Agregar"
+        Me.BtnAgregar.UseVisualStyleBackColor = True
+        '
         'BtnBuscar
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(779, 19)
@@ -101,9 +111,10 @@ Partial Class FrmPaciente
         '
         'RbDPI
         '
+        Me.RbDPI.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RbDPI.AutoSize = True
         Me.RbDPI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbDPI.Location = New System.Drawing.Point(917, 202)
+        Me.RbDPI.Location = New System.Drawing.Point(923, 205)
         Me.RbDPI.Name = "RbDPI"
         Me.RbDPI.Size = New System.Drawing.Size(48, 20)
         Me.RbDPI.TabIndex = 8
@@ -114,9 +125,10 @@ Partial Class FrmPaciente
         '
         'RbNombre
         '
+        Me.RbNombre.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RbNombre.AutoSize = True
         Me.RbNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbNombre.Location = New System.Drawing.Point(916, 179)
+        Me.RbNombre.Location = New System.Drawing.Point(923, 179)
         Me.RbNombre.Name = "RbNombre"
         Me.RbNombre.Size = New System.Drawing.Size(75, 20)
         Me.RbNombre.TabIndex = 7
@@ -127,9 +139,10 @@ Partial Class FrmPaciente
         '
         'RbApellido
         '
+        Me.RbApellido.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RbApellido.AutoSize = True
         Me.RbApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbApellido.Location = New System.Drawing.Point(916, 156)
+        Me.RbApellido.Location = New System.Drawing.Point(923, 156)
         Me.RbApellido.Name = "RbApellido"
         Me.RbApellido.Size = New System.Drawing.Size(76, 20)
         Me.RbApellido.TabIndex = 6
@@ -140,6 +153,7 @@ Partial Class FrmPaciente
         '
         'ChbBuscar
         '
+        Me.ChbBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ChbBuscar.AutoSize = True
         Me.ChbBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChbBuscar.Location = New System.Drawing.Point(917, 127)
@@ -166,7 +180,7 @@ Partial Class FrmPaciente
         Me.TxtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBuscar.Location = New System.Drawing.Point(78, 19)
         Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(669, 24)
+        Me.TxtBuscar.Size = New System.Drawing.Size(593, 24)
         Me.TxtBuscar.TabIndex = 3
         Me.TxtBuscar.Visible = False
         '
@@ -292,16 +306,6 @@ Partial Class FrmPaciente
         Me.TtInformacion.AutomaticDelay = 100
         Me.TtInformacion.IsBalloon = True
         Me.TtInformacion.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
-        'BtnAgregar
-        '
-        Me.BtnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnAgregar.Location = New System.Drawing.Point(917, 6)
-        Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAgregar.TabIndex = 10
-        Me.BtnAgregar.Text = "Agregar"
-        Me.BtnAgregar.UseVisualStyleBackColor = True
         '
         'FrmPaciente
         '

@@ -203,4 +203,9 @@
         TtInformacion.ToolTipTitle = "Buscar datos"
         TtInformacion.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+
+    End Sub
+
 End Class

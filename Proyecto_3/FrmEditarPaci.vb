@@ -61,4 +61,19 @@
     Private Sub cbmTipoSangre_MouseClick(sender As Object, e As MouseEventArgs) Handles cbmTipoSangre.MouseClick
         cbmTipoSangre.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
+
+    Private Sub BtnCrear_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
+        abrirConexion()
+        Dim sql As String = "INSERT INTO PACIENTE(ID_Paciente, ) VALUES(" & txtId.Text & ", dpi= " & txtDpi.Text & ", nombre = '" & txtNombre.Text & "', apellido= '" & txtApellido.Text & "', direccion= '" & txtDireccion.Text & "', telefono= " & txtTelefono.Text & ", id_tipo_sangre =" & cbmIdTipoSangre.SelectedIndex & ", estatura = " & txtEstatura.Text & ", peso = " & txtPeso.Text & ", fecha_nacimiento = '" & dtFechaNac.Value.ToShortDateString & "')"
+        Dim eje As New OleDb.OleDbCommand
+        eje.CommandType = CommandType.Text
+        eje.Connection = conexion
+        eje.CommandText = sql
+        eje.ExecuteNonQuery()
+        cerrarConexion()
+    End Sub
 End Class

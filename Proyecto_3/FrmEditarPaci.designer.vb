@@ -53,6 +53,7 @@ Partial Class FrmEditarPaci
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lbIdU = New System.Windows.Forms.Label()
         Me.lbNombreU = New System.Windows.Forms.Label()
+        Me.BtnCrear = New System.Windows.Forms.Button()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,7 +74,6 @@ Partial Class FrmEditarPaci
         Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.Location = New System.Drawing.Point(171, 19)
         Me.txtId.Name = "txtId"
-        Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(244, 23)
         Me.txtId.TabIndex = 26
         '
@@ -318,7 +318,6 @@ Partial Class FrmEditarPaci
         Me.txtDpi.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpi.Location = New System.Drawing.Point(171, 48)
         Me.txtDpi.Name = "txtDpi"
-        Me.txtDpi.ReadOnly = True
         Me.txtDpi.Size = New System.Drawing.Size(244, 23)
         Me.txtDpi.TabIndex = 43
         '
@@ -386,12 +385,34 @@ Partial Class FrmEditarPaci
         Me.lbNombreU.TabIndex = 56
         Me.lbNombreU.Text = "Nombre:"
         '
+        'BtnCrear
+        '
+        Me.BtnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCrear.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(142, Byte), Integer))
+        Me.BtnCrear.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BtnCrear.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.BtnCrear.FlatAppearance.BorderSize = 0
+        Me.BtnCrear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.BtnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCrear.ForeColor = System.Drawing.Color.Gainsboro
+        Me.BtnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCrear.Location = New System.Drawing.Point(457, 357)
+        Me.BtnCrear.Name = "BtnCrear"
+        Me.BtnCrear.Size = New System.Drawing.Size(100, 30)
+        Me.BtnCrear.TabIndex = 60
+        Me.BtnCrear.Text = "Crear"
+        Me.BtnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCrear.UseVisualStyleBackColor = False
+        '
         'FrmEditarPaci
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(645, 402)
+        Me.Controls.Add(Me.BtnCrear)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lbIdU)
@@ -462,4 +483,5 @@ Partial Class FrmEditarPaci
     Friend WithEvents Label8 As Label
     Friend WithEvents lbIdU As Label
     Friend WithEvents lbNombreU As Label
+    Private WithEvents BtnCrear As Button
 End Class
