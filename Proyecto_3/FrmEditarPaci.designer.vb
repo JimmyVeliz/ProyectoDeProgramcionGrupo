@@ -34,7 +34,7 @@ Partial Class FrmEditarPaci
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbTipoSangre = New System.Windows.Forms.Label()
         Me.lbEdad = New System.Windows.Forms.Label()
@@ -74,6 +74,7 @@ Partial Class FrmEditarPaci
         Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.Location = New System.Drawing.Point(171, 19)
         Me.txtId.Name = "txtId"
+        Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(244, 23)
         Me.txtId.TabIndex = 26
         '
@@ -174,30 +175,30 @@ Partial Class FrmEditarPaci
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(100, 30)
         Me.btnNuevo.TabIndex = 30
-        Me.btnNuevo.Text = "Guardar"
+        Me.btnNuevo.Text = "Actualizar"
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
-        'btnEditar
+        'btnCancelar
         '
-        Me.btnEditar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(142, Byte), Integer))
-        Me.btnEditar.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnEditar.FlatAppearance.BorderSize = 0
-        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEditar.Location = New System.Drawing.Point(304, 357)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(100, 30)
-        Me.btnEditar.TabIndex = 29
-        Me.btnEditar.Text = "Cancelar"
-        Me.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEditar.UseVisualStyleBackColor = False
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(142, Byte), Integer))
+        Me.btnCancelar.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCancelar.Location = New System.Drawing.Point(304, 357)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btnCancelar.TabIndex = 29
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'pictureBox1
         '
@@ -274,7 +275,8 @@ Partial Class FrmEditarPaci
         Me.txtEdad.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEdad.Location = New System.Drawing.Point(171, 307)
         Me.txtEdad.Name = "txtEdad"
-        Me.txtEdad.Size = New System.Drawing.Size(244, 23)
+        Me.txtEdad.ReadOnly = True
+        Me.txtEdad.Size = New System.Drawing.Size(115, 23)
         Me.txtEdad.TabIndex = 34
         '
         'txtPeso
@@ -318,6 +320,7 @@ Partial Class FrmEditarPaci
         Me.txtDpi.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDpi.Location = New System.Drawing.Point(171, 48)
         Me.txtDpi.Name = "txtDpi"
+        Me.txtDpi.ReadOnly = True
         Me.txtDpi.Size = New System.Drawing.Size(244, 23)
         Me.txtDpi.TabIndex = 43
         '
@@ -398,13 +401,14 @@ Partial Class FrmEditarPaci
         Me.BtnCrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCrear.ForeColor = System.Drawing.Color.Gainsboro
         Me.BtnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCrear.Location = New System.Drawing.Point(457, 357)
+        Me.BtnCrear.Location = New System.Drawing.Point(186, 357)
         Me.BtnCrear.Name = "BtnCrear"
         Me.BtnCrear.Size = New System.Drawing.Size(100, 30)
         Me.BtnCrear.TabIndex = 60
-        Me.BtnCrear.Text = "Crear"
+        Me.BtnCrear.Text = "Nuevo"
         Me.BtnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnCrear.UseVisualStyleBackColor = False
+        Me.BtnCrear.Visible = False
         '
         'FrmEditarPaci
         '
@@ -431,7 +435,7 @@ Partial Class FrmEditarPaci
         Me.Controls.Add(Me.txtPeso)
         Me.Controls.Add(Me.txtEstatura)
         Me.Controls.Add(Me.btnNuevo)
-        Me.Controls.Add(Me.btnEditar)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.pictureBox1)
         Me.Controls.Add(Me.label5)
         Me.Controls.Add(Me.txtId)
@@ -459,8 +463,7 @@ Partial Class FrmEditarPaci
     Private WithEvents label3 As Label
     Private WithEvents label1 As Label
     Private WithEvents label2 As Label
-    Private WithEvents btnNuevo As Button
-    Private WithEvents btnEditar As Button
+    Private WithEvents btnCancelar As Button
     Public WithEvents txtId As TextBox
     Public WithEvents txtTelefono As TextBox
     Public WithEvents txtDireccion As TextBox
@@ -483,5 +486,6 @@ Partial Class FrmEditarPaci
     Friend WithEvents Label8 As Label
     Friend WithEvents lbIdU As Label
     Friend WithEvents lbNombreU As Label
-    Private WithEvents BtnCrear As Button
+    Public WithEvents BtnCrear As Button
+    Public WithEvents btnNuevo As Button
 End Class

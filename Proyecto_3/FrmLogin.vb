@@ -84,9 +84,9 @@ Public Class FrmLogin
         ejecutar.Connection = conexion
         ejecutar.CommandText = sqlBuscarUsuario
         respuesta = ejecutar.ExecuteReader
+        If respuesta.HasRows Then
+            While (respuesta.Read)
 
-        While (respuesta.Read)
-            If respuesta.HasRows Then
                 Me.Hide()
                 nombreUsuario = respuesta!Apellido & ", " & respuesta!Nombre
                 emailUsuario = respuesta!Email
@@ -97,12 +97,12 @@ Public Class FrmLogin
                 'FormPrincipal.Show()
                 AddHandler FormPrincipal.FormClosed, AddressOf Me.cerrarSesion
 
-            Else
-                MsgBox("Datos incorrectos, intente nuevamente")
-                txtContra.Clear()
-                txtContra.Focus()
-            End If
-        End While
+            End While
+        Else
+            MsgBox("Datos incorrectos, intente nuevamente", MsgBoxStyle.Critical)
+            txtContra.Clear()
+            txtContra.Focus()
+        End If
         respuesta.Close()
         cerrarConexion()
     End Sub

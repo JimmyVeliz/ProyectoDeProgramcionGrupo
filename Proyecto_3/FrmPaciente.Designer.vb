@@ -23,6 +23,7 @@ Partial Class FrmPaciente
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPaciente))
         Me.TcPacientes = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.BtnAgregar = New System.Windows.Forms.Button()
@@ -51,6 +52,9 @@ Partial Class FrmPaciente
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtCerrarForm = New System.Windows.Forms.PictureBox()
         Me.TtInformacion = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnVistaPrevia = New System.Windows.Forms.Button()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.TcPacientes.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +74,7 @@ Partial Class FrmPaciente
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnVistaPrevia)
         Me.TabPage1.Controls.Add(Me.BtnAgregar)
         Me.TabPage1.Controls.Add(Me.BtnBuscar)
         Me.TabPage1.Controls.Add(Me.RbDPI)
@@ -307,6 +312,30 @@ Partial Class FrmPaciente
         Me.TtInformacion.IsBalloon = True
         Me.TtInformacion.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
+        'BtnVistaPrevia
+        '
+        Me.BtnVistaPrevia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnVistaPrevia.Location = New System.Drawing.Point(917, 231)
+        Me.BtnVistaPrevia.Name = "BtnVistaPrevia"
+        Me.BtnVistaPrevia.Size = New System.Drawing.Size(75, 23)
+        Me.BtnVistaPrevia.TabIndex = 11
+        Me.BtnVistaPrevia.Text = "Vista previa"
+        Me.BtnVistaPrevia.UseVisualStyleBackColor = True
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
         'FrmPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,4 +385,7 @@ Partial Class FrmPaciente
     Friend WithEvents TtInformacion As ToolTip
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents BtnAgregar As Button
+    Friend WithEvents BtnVistaPrevia As Button
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class

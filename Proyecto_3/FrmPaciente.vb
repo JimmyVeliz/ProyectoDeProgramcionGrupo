@@ -98,7 +98,7 @@
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim eliminar As String = dgvPacientes.CurrentRow.Cells(0).Value.ToString()
         Dim sql As String = "DELETE * FROM Paciente WHERE id_paciente =" & eliminar
-        MsgBox(sql)
+        'MsgBox(sql)
         Dim respuesta As Byte = MsgBox("Desea eliminar el registro", vbOKCancel)
 
         If respuesta = vbOK Then
@@ -109,7 +109,6 @@
             ejecutar.CommandText = sql
             ejecutar.ExecuteNonQuery()
             cerrarConexion()
-
             MsgBox("Registro eliminado con exito")
             listaPacientes()
         End If
@@ -205,7 +204,15 @@
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        FrmEditarPaci.txtId.ReadOnly = False
+        FrmEditarPaci.txtDpi.ReadOnly = False
+        FrmEditarPaci.btnNuevo.Visible = False
+        FrmEditarPaci.BtnCrear.Visible = True
 
+        FrmEditarPaci.Show()
     End Sub
 
+    Private Sub BtnVistaPrevia_Click(sender As Object, e As EventArgs) Handles BtnVistaPrevia.Click
+        'PrintPreviewDialog1.ShowDialog()
+    End Sub
 End Class
